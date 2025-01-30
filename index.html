@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
     <title>Javascript Ekstra Opgaver 01</title>
     <style>fieldset { max-width: 600px; margin: auto; } code { color: blue; }</style>
 </head>
@@ -15,7 +16,7 @@
             <li>Funktionen skal returnere <code>true</code> hvis <code>a</code> og <code>b</code> har samme værdi <strong>og</strong> samme type. Ellers skal funktionen returnere <code>false</code>.</li>
         </ul>
 
-        <button onclick="validate('a')">Test Opgave A</button>
+        <button onclick="assignmentA(true,'true')">Test Opgave A</button>
     </fieldset>
 
     <fieldset class="assignmentB">
@@ -25,7 +26,7 @@
             <li>Funktionen skal returnere de tre <em>sidste</em> tegn i string'en.</li>
         </ul>
 
-        <button onclick="validate('b')">Test Opgave B</button>
+        <button onclick="assignmentB('testString')">Test Opgave B</button>
     </fieldset>
 
     <fieldset class="assignmentC">
@@ -35,7 +36,7 @@
             <li>Funktionen skal returnere <code>true</code> hvis tallet er <em>lige</em>. Ellers skal funktionen returnere <code>false</code>.</li>
         </ul>
 
-        <button onclick="validate('c')">Test Opgave C</button>
+        <button onclick="assignmentC(12)">Test Opgave C</button>
     </fieldset>
 
     <fieldset class="assignmentD">
@@ -45,7 +46,7 @@
             <li>Funktionen skal returnere det <em>mindste</em> tal i array'et, som er <em>større</em> end <code>0</code>.</li>
         </ul>
 
-        <button onclick="validate('d')">Test Opgave D</button>
+        <button onclick="assignmentD([0,-5,10,4,2,3,6,8,-2])">Test Opgave D</button>
     </fieldset>
 
     <fieldset class="assignmentE">
@@ -57,7 +58,7 @@
             <li><strong>Bemærk:</strong> Funktionen skal både virke med stort <code>B</code> og lille <code>b</code>.</li>
         </ul>
 
-        <button onclick="validate('e')">Test Opgave E</button>
+        <button onclick="assignmentE(['Bernie','Benjamin','Jack','Maria','barry','Peter','barney'])">Test Opgave E</button>
     </fieldset>
 
     <fieldset class="assignmentF">
