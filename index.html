@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Ekstra Opgaver 01</title>
+    <style>fieldset { max-width: 600px; margin: auto; } code { color: blue; }</style>
+</head>
+<body>
+    <fieldset class="assignmentA">
+        <legend>Opgave A:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentA()</code> der modtager to parameters, <code>a</code> og <code>b</code>.</li>
+            <li>Funktionen skal returnere <code>true</code> hvis <code>a</code> og <code>b</code> har samme værdi <strong>og</strong> samme type. Ellers skal funktionen returnere <code>false</code>.</li>
+        </ul>
+
+        <button onclick="validate('a')">Test Opgave A</button>
+    </fieldset>
+
+    <fieldset class="assignmentB">
+        <legend>Opgave B:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentB()</code> der modtager en <code>string</code> som eneste parameter.</li>
+            <li>Funktionen skal returnere de tre <em>sidste</em> tegn i string'en.</li>
+        </ul>
+
+        <button onclick="validate('b')">Test Opgave B</button>
+    </fieldset>
+
+    <fieldset class="assignmentC">
+        <legend>Opgave C:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentC()</code> der modtager et <code>number</code> som eneste parameter.</li>
+            <li>Funktionen skal returnere <code>true</code> hvis tallet er <em>lige</em>. Ellers skal funktionen returnere <code>false</code>.</li>
+        </ul>
+
+        <button onclick="validate('c')">Test Opgave C</button>
+    </fieldset>
+
+    <fieldset class="assignmentD">
+        <legend>Opgave D:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentD()</code> der modtager et <code>array</code> som eneste parameter.</li>
+            <li>Funktionen skal returnere det <em>mindste</em> tal i array'et, som er <em>større</em> end <code>0</code>.</li>
+        </ul>
+
+        <button onclick="validate('d')">Test Opgave D</button>
+    </fieldset>
+
+    <fieldset class="assignmentE">
+        <legend>Opgave E:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentE()</code> der modtager et <code>array</code> som eneste parameter.</li>
+            <li>Funktionen skal lave et nyt <code>array</code>, med alle de strings fra det originale array, der starter med bogstavet <code>b</code>.</li>
+            <li>Hvis det originale array <em>ikke</em> indeholder nogle stings der starter med <code>b</code>, skal den returnere <code>false</code>. Ellers, skal funktionen returnere det nye array, soteret i alfabetisk rækkefølge.</li>
+            <li><strong>Bemærk:</strong> Funktionen skal både virke med stort <code>B</code> og lille <code>b</code>.</li>
+        </ul>
+
+        <button onclick="validate('e')">Test Opgave E</button>
+    </fieldset>
+
+    <fieldset class="assignmentF">
+        <legend>Opgave F:</legend>
+        <ul>
+            <li>Lav en funktion <code>assignmentF()</code> der modtager et <code>number</code> <em>eller</em> et <code>array</code> som eneste parameter.</li>
+            <li>Hvis funktionen modtager et <code>number</code>, skal den returnere kvadratroden af tallet.
+            <li>Hvis funktionen modtager et <code>array</code>, skal den returnere kvadratroden af summen af alle tal i array'et (alle værdier som ikke er tal, skal ignoreres).</li>
+        </ul>
+
+        <button onclick="validate('f')">Test Opgave F</button>
+    </fieldset>
+
+
+    
+
+    <script src="script.js"></script>
+    <script>      
+        function validate(assignment) {
+            let cases = {
+                assignmentA:[ [2, 3, false], [3, 3, true], [1, '1', false], ['10', '10', true] ],
+                assignmentB:[ ['Henrik', 'rik'], ['Batman', 'man'], ['Skole', 'ole'], ['Fridag', 'dag'] ],
+                assignmentC:[ [42, true], [69, false], [420, true], [1337, false] ],
+                assignmentD:[ [[8, 2, 88, -111, 0], 2], [[45, -23, 1, 23, 0.5], 0.5], [[343, -32, 88, -111, 635], 88], [[7, 3, 23, -4, 73], 3] ],
+                assignmentE:[ [['Brian', 'Henrik', 'batman', 42], ['batman', 'Brian']], [['Carsten', 'Troels', 'Henrik', 999], false], [['Bonk!', 'Boom!', 'Bam!', 'Beep!'], ['Bam!', 'Beep!', 'Bonk!','Boom!']] ],
+                assignmentF:[ [25, 5], [81, 9], [[4, 4, 4, 4], 4], [['HTML', 'CSS', 100, 'JS', 'PHP'], 10] ]
+            }
+
+            let errors = {};
+
+            let color = {valid:'lightgreen', invalid:'lightcoral'};
+
+            switch(assignment) {
+                case 'a':
+                    cases.assignmentA.forEach(check => { if (typeof assignmentA === 'undefined' || assignmentA( check[0], check[1]) !== check[2]) errors.assignmentA = true});
+                    document.querySelector('.assignmentA').style.backgroundColor = errors.assignmentA ? color.invalid : color.valid;
+                break;
+                case 'b':
+                    cases.assignmentB.forEach(check => { if (typeof assignmentB === 'undefined' || assignmentB(check[0]) !== check[1]) errors.assignmentB = true});
+                    document.querySelector('.assignmentB').style.backgroundColor = errors.assignmentB ? color.invalid : color.valid;
+                break;
+                case 'c': 
+                    cases.assignmentC.forEach(check => { if (typeof assignmentC === 'undefined' || assignmentC(check[0]) !== check[1]) errors.assignmentC = true});
+                    document.querySelector('.assignmentC').style.backgroundColor = errors.assignmentC ? color.invalid : color.valid;
+                break;
+                case 'd': 
+                    cases.assignmentD.forEach(check => { if (typeof assignmentD === 'undefined' || assignmentD(check[0]) !== check[1]) errors.assignmentD = true});
+                    document.querySelector('.assignmentD').style.backgroundColor = errors.assignmentD ? color.invalid : color.valid;
+                break;
+                case 'e': 
+                    cases.assignmentE.forEach(check => {
+                        let returnValue = assignmentE(check[0]);
+
+                        if (typeof assignmentE !== 'undefined') {
+                            if ( Array.isArray(returnValue) ) returnValue.every((value, index) => { if (check[1][index] !== value) errors.assignmentE = true; });
+                            else if (returnValue !== check[1]) errors.assignmentE = true;
+                        }
+                    });
+
+                    document.querySelector('.assignmentE').style.backgroundColor = errors.assignmentE ? color.invalid : color.valid;
+                break;
+
+                case 'f': 
+                    cases.assignmentF.forEach(check => { if (typeof assignmentF === 'undefined' || assignmentF(check[0]) !== check[1]) errors.assignmentF = true});
+                    document.querySelector('.assignmentF').style.backgroundColor = errors.assignmentF ? color.invalid : color.valid;
+                
+                break;
+
+            }
+        }
+
+    </script>
+</body>
+</html>
