@@ -34,6 +34,7 @@ function assignmentD(arr) {
     });
     let firstValueOverZero = arr.find((element) => element > 0);
     console.log(firstValueOverZero);
+    return firstValueOverZero;
 }
 
 function assignmentE(arr) {
